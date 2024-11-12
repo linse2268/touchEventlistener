@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Changing Div</title>
+  <style>
+    /* Basic styling for the div and button */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #colorDiv {
+      width: 200px;
+      height: 200px;
+      background-color: red; /* Default color */
+      transition: background-color 0.3s; /* Smooth transition */
+    }
+
+    #pressButton {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="colorDiv"></div>
+  <button id="pressButton" 
+          onmousedown="changeColor()" 
+          onmouseup="resetColor()" 
+          ontouchstart="changeColor()" 
+          ontouchend="resetColor()">
+    Press Me
+  </button>
+
+  <script>
+    // JavaScript functions to change and reset the color
+    function changeColor() {
+      document.getElementById('colorDiv').style.backgroundColor = 'blue';
+    }
+
+    function resetColor() {
+      document.getElementById('colorDiv').style.backgroundColor = 'red';
+    }
+  </script>
+
+</body>
+</html>
